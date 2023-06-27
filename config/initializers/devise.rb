@@ -12,7 +12,8 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '4739ec0ef2ef6f1ba0c33f14b461c3f0f69ecd11b9ebce4d75939d8f585225994f2a6ae5b2a8327d8866744ce352b5b4cccc56fb3a5e2f6276453fcd29920312'
+
+  # config.secret_key = 'f703a6f8aa4228ff79a1dfacf959c07bb5c0f10fe0801b100a0e71df09b1e0197f7331ec5d86a7981c5194492ca248d44bc579bfd30b67af01c398d0c9bf9711'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -124,7 +125,8 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'df05949bc46dbe51f907aa23d1837fe9aaf3bbb6bb15dbc1fec984763f740eab9961b0a90df0eac6cce76d963ef3365b51034b74af1d4907765d82028c912453'
+
+  # config.pepper = '39d98d9cf0da0bfe09809a508e6397e154efe0525fe4c49d48198cc34a2c1f71c172bd39db9f1abd7da0a34465cfe904b994eabdb25d26996543d0b0ab04d485'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -149,6 +151,7 @@ Devise.setup do |config|
   # their account can't be confirmed with the token any more.
   # Default is nil, meaning there is no restriction on how long a user can take
   # before confirming their account.
+
   config.confirm_within = 3.days
 
   # If true, requires any email changes to be confirmed (exactly the same way as
@@ -158,6 +161,7 @@ Devise.setup do |config|
   config.reconfirmable = true
 
   # Defines which key will be used when confirming an account
+
   config.confirmation_keys = [:email]
 
   # ==> Configuration for :rememberable
@@ -217,6 +221,7 @@ Devise.setup do |config|
   # ==> Configuration for :recoverable
   #
   # Defines which key will be used when recovering the password for an account
+
   config.reset_password_keys = [:email]
 
   # Time interval you can reset your password with a reset password key.

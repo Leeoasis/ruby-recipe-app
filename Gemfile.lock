@@ -255,10 +255,10 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
-  devise (~> 4.9)
+  devise
   importmap-rails
   jbuilder
-  letter_opener (~> 1.8)
+  letter_opener
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.5)
@@ -272,7 +272,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.2.2p53
+   ruby 3.1.2p20
 
 BUNDLED WITH
    2.4.13

@@ -19,7 +19,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[7.0]
       # t.string   :current_sign_in_ip
       # t.string   :last_sign_in_ip
 
-      ## Confirmable
+      # Confirmable
       t.string :confirmation_token
       t.datetime :confirmed_at
       t.datetime :confirmation_sent_at
@@ -36,7 +36,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[7.0]
 
     add_index :users, :email, unique: true
     add_index :users, :reset_password_token, unique: true
-    add_index :users, :confirmation_token, unique: true
+    # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
   end
 

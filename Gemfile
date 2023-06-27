@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.2.2'
+ruby '3.1.2'
+
+gem 'devise'
+gem 'letter_opener', group: :development
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.5'
@@ -72,7 +75,3 @@ group :test do
 end
 
 gem 'rubocop', '>= 1.0', '< 2.0'
-
-gem 'devise', '~> 4.9'
-
-gem 'letter_opener', '~> 1.8'
