@@ -255,12 +255,10 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
-
-  devise (~> 4.9)
+  devise
   importmap-rails
   jbuilder
-  letter_opener (~> 1.8)
-
+  letter_opener
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.5)

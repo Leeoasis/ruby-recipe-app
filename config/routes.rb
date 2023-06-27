@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   # Recipe details routes
   resources :recipes, only: [:show] do
-    resources :foods, only: [:new, :create], module: :recipes
+    resources :foods, only: %i[new create], module: :recipes
   end
 
   # Navigation menu routes
