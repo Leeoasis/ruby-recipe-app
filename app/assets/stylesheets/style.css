@@ -162,3 +162,18 @@ th {
   cursor: pointer;
   background-color: #fa5f55;
 }
+
+.food_form_heading {
+  color: #0000ff;
+  font-size: 26px;
+}
+
+.back_link {
+  padding: 0 18%;
+  color: #0000ff;
+  font-weight: 500;
+}
+
+.back_link:hover {
+  color: #0047ab;
+}
