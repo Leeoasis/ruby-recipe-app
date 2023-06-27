@@ -29,6 +29,8 @@ Rails.application.routes.draw do
     resources :foods, only: %i[new create], module: :recipes
   end
 
+  get '/shopping_list', to: 'shopping_list#index', as: 'shopping_list'
+
   # Navigation menu routes
   root to: 'foods#index'
 end

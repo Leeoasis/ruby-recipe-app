@@ -13,6 +13,29 @@ body {
   background-color: #f1f1f1;
 }
 
+/* ------------------------------ Styling the Nav Bar ------------------------- */
+nav {
+  background-color: #d3d3d3;
+  padding: 1% 2%;
+  width: 100%;
+}
+
+nav > ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10%;
+}
+
+li {
+  list-style: none;
+}
+
+.nav_link {
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
 /* ------------------------------ Styling the registration pages ------------------------- */
 .page-wrapper {
   display: grid;
@@ -109,7 +132,6 @@ h1 {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  top: 0;
   left: 0;
 }
 
