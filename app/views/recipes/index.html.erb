@@ -1,0 +1,20 @@
+<div class="add_new_recipe_container">
+<%= link_to 'Add New Recipe', new_recipe_path, class: 'add_new_recipe_link' %>
+<% if @recipes.any? %>
+  <div class="recipe-cards">
+    <% @recipes.each do |recipe| %>
+      <%= link_to recipe_path(recipe) do %>
+        <div class="recipe-card">
+          <div class="name_action_container">
+            <h3 class="recipe_text"><%= recipe.name %></h3>
+            <%= button_to "Remove", recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?' }, class:'delete_food_button' %>
+          </div>
+          <p class="recipe_text"><%= recipe.description %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% else %>
+  <p>No recipes found.</p>
+<% end %>
+</div>
