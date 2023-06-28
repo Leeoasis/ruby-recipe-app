@@ -38,7 +38,7 @@ class FoodsController < ApplicationController
   end
 
   def shopping_list
-    @recipe = Recipe.find_by(name: 'Spaghetti Bolognese') # Modify this to match your desired recipe selection logic
+    @recipe = Recipe.find(params[:id])
     return unless @recipe
   
     @recipe_foods = @recipe.recipe_foods.includes(:food)
@@ -57,8 +57,8 @@ class FoodsController < ApplicationController
   
     @total_food_items = @shopping_list.length
     @total = @shopping_list.sum { |item| item[:value] }
-  end    
-
+  end 
+  
   private
 
   def food_params

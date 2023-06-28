@@ -5,12 +5,14 @@
     <p> Cooking Time: <%= @recipe.cooking_time %> hour </p>
     <p> <%= @recipe.description %> </p>
   </section>
-  <section class="actions_container">
-    <%= link_to 'Generate Shop List', shopping_list_foods_path, class: 'action_link' %>
-    <% if @recipe.user == current_user %>
-      <%= link_to 'Add Ingredient', new_recipe_recipe_food_path(@recipe), class: 'action_link' %>
-    <% end %>
-  </section>
+
+<section class="actions_container">
+  <%= link_to 'Generate Shop List', recipe_shopping_list_path(@recipe), class: 'action_link' %>
+  <% if @recipe.user == current_user %>
+    <%= link_to 'Add Ingredient', new_recipe_recipe_food_path(@recipe), class: 'action_link' %>
+  <% end %>
+</section>
+
   <table class="food-table">
     <thead>
       <tr>
