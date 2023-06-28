@@ -5,6 +5,7 @@ ruby '3.2.2'
 
 gem 'devise'
 gem 'letter_opener', group: :development
+gem 'jquery-rails'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.5'
@@ -75,3 +76,5 @@ group :test do
 end
 
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+gem "rails-ujs", "~> 0.1.0"
