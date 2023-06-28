@@ -4,8 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.2.2'
 
 gem 'devise'
-gem 'letter_opener', group: :development
 gem 'jquery-rails'
+gem 'letter_opener', group: :development
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.5'
@@ -77,4 +77,4 @@ end
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
-gem "rails-ujs", "~> 0.1.0"
+gem 'rails-ujs', '~> 0.1.0'
