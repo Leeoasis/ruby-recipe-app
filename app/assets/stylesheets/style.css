@@ -247,3 +247,21 @@ th {
 .add_new_recipe_link:hover {
   color: #0047ab;
 }
+
+.toggle-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.toggle-button.public {
+  background-color: green;
+  color: white;
+}
+
+.toggle-button.private {
+  background-color: red;
+  color: white;
+}

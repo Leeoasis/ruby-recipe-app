@@ -8,8 +8,15 @@
 
 <section class="actions_container">
   <%= link_to 'Generate Shop List', recipe_shopping_list_path(@recipe), class: 'action_link' %>
-  <% if @recipe.user == current_user %>
-    <%= link_to 'Add Ingredient', new_recipe_recipe_food_path(@recipe), class: 'action_link' %>
+  <% if can?(:toggle, @recipe) %>
+    <% if @recipe.user == current_user %>
+      <%= link_to 'Add Ingredient', new_recipe_recipe_food_path(@recipe), class: 'action_link' %>
+    <% end %>
+    <%= form_with model: @recipe, url: toggle_recipe_path(@recipe.id), method: :patch, local: true do |form| %>
+        <button type="submit" class="toggle-button <%= @recipe.public ? 'public' : 'private' %>">
+          <%= @recipe.public ? 'Public' : 'Private' %>
+        </button>
+    <% end %>
   <% end %>
 </section>
 

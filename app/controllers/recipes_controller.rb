@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   def index
     @recipes = current_user.recipes
@@ -21,6 +22,16 @@ class RecipesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def toggle
+    @recipe = current_user.recipes.find(params[:id])
+    @recipe.update(public: !@recipe.public)
+    redirect_to recipe_path(@recipe), notice: 'Recipe visibility toggled successfully.'
+  end
+
+  def public_list
+    @public_recipes = Recipe.where(public: true).order(created_at: :desc)
   end
 
   def destroy
