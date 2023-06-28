@@ -2,16 +2,20 @@
 <h3>Public Recipe List</h3>
 <% if @public_recipes.any? %>
   <div class="recipe-cards">
-    <% @public_recipes.each do |recipe| %>
-      <%= link_to recipe_path(recipe) do %>
+    <% @public_recipes.each do |recipe| %>      
         <div class="recipe-card">
           <div class="name_action_container">
             <h3 class="recipe_text"><%= recipe.name %></h3>
-            <%= button_to "Remove", recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?' }, class:'delete_food_button' %>
+            <% if can? :destroy, recipe %>
+              <%= button_to "Remove", recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?' }, class:'delete_food_button' %>
+            <% end %>
           </div>
+          <div>
           <p class="recipe_text"><%= recipe.description %></p>
+          <p class="recipe_text">Preparation Time: <%= recipe.preparation_time %> mins</p>
+          <p class="recipe_text">Cooking Time: <%= recipe.cooking_time %> mins</p>
+          </div>
         </div>
-      <% end %>
     <% end %>
   </div>
 <% else %>
