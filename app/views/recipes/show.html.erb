@@ -37,8 +37,12 @@
           <td><%= recipe_food.quantity %></td>
           <td><%= food.price * recipe_food.quantity %></td>
           <td>
-            <%= link_to 'Modify', '#', class: 'action_link' %>
-            <%= link_to 'Delete', recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete, data: { confirm: 'Are you sure you want to delete this food?' }, class: 'action_link' %>
+            <% if can?(:update, recipe_food) %>
+              <%= link_to 'Modify', '#', class: 'action_link' %>
+            <% end %> 
+            <% if can?(:delete, recipe_food) %>
+              <%= link_to 'Delete', recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete, data: { confirm: 'Are you sure you want to delete this food?' }, class: 'action_link' %>
+            <% end %>  
           </td>
         </tr>
       <% end %>
