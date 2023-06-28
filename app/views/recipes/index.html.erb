@@ -1,0 +1,14 @@
+<h1>Recipes List</h1>
+<%= link_to 'Add New Recipe', new_recipe_path %>
+
+<% @recipes.each do |recipe| %>
+  <div class="recipe">
+    <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+    <p><%= recipe.description %></p>
+    <!-- Add any other relevant information about the recipe -->
+
+    <% if recipe.user == current_user %>
+      <%= link_to 'Delete', recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?' } %>
+    <% end %>
+  </div>
+<% end %>

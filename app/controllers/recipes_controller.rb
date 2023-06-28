@@ -2,9 +2,13 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @recipes = current_user.recipes
+    if current_user.recipes.empty?
+      redirect_to new_recipe_path
+    else
+      @recipes = current_user.recipes.all
+    end
   end
-
+  
   def show
     @recipe = current_user.recipes.find(params[:id])
     @foods = @recipe.foods

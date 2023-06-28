@@ -29,6 +29,10 @@ Rails.application.routes.draw do
     resources :foods, only: %i[new create], module: :recipes
   end
 
+  resources :recipes do
+    patch 'toggle_public', on: :member
+  end
+
   # Navigation menu routes
   root to: 'foods#index'
 end
