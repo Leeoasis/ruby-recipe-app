@@ -7,9 +7,16 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = current_user.recipes.find(params[:id])
-    @foods = @recipe.foods
-  end
+    @recipe = Recipe.find(params[:id])
+  
+    if @recipe.public? || @recipe.user == current_user
+      authorize! :read, @recipe
+      @foods = @recipe.foods
+    else
+      flash[:alert] = "You are not authorized to access this recipe."
+      redirect_to root_path
+    end
+  end  
 
   def new
     @recipe = current_user.recipes.new
