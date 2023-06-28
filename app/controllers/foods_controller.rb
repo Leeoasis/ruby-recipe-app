@@ -37,6 +37,28 @@ class FoodsController < ApplicationController
     redirect_to foods_path, notice: 'Food was successfully deleted.'
   end
 
+  def shopping_list
+    @recipe = Recipe.find_by(name: 'Spaghetti Bolognese') # Modify this to match your desired recipe selection logic
+    return unless @recipe
+  
+    @recipe_foods = @recipe.recipe_foods.includes(:food)
+  
+    @shopping_list = @recipe_foods.map do |recipe_food|
+      food = recipe_food.food
+      quantity = recipe_food.quantity
+      value = quantity * food.price
+  
+      {
+        food: food,
+        quantity: quantity,
+        value: value
+      }
+    end
+  
+    @total_food_items = @shopping_list.length
+    @total = @shopping_list.sum { |item| item[:value] }
+  end    
+
   private
 
   def food_params
