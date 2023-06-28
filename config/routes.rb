@@ -21,8 +21,8 @@ Rails.application.routes.draw do
     post :toggle, on: :member
     resources :recipe_foods, only: [:new, :create, :destroy]
   end
-  # User shopping list route
-  get 'users/shopping_list', to: 'users#shopping_list', as: 'users_shopping_list'
+  
+  get 'recipes/:id/shopping_list', to: 'foods#shopping_list', as: 'recipe_shopping_list'
 
   # Public recipe list routes
   resources :public_recipes, only: [:index]
