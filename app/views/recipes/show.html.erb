@@ -43,8 +43,8 @@
         <% food = recipe_food.food %>
         <tr>
           <td><%= food.name %></td>
-          <td><%= recipe_food.quantity %></td>
-          <td><%= food.price * recipe_food.quantity %></td>
+          <td><%= recipe_food.quantity %> <%= food.measurement_unit %></td>
+          <td> $<%= food.price * recipe_food.quantity %></td>
           <td class="action-btns">
             <% if can?(:update, recipe_food) %>
               <%= link_to 'Modify', '#', class: 'modify_link' %>

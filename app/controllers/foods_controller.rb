@@ -45,11 +45,13 @@ class FoodsController < ApplicationController
   
     @shopping_list = @recipe_foods.map do |recipe_food|
       food = recipe_food.food
+      measurement_unit = food.measurement_unit
       quantity = recipe_food.quantity
       value = quantity * food.price
   
       {
         food: food,
+        measurement_unit: measurement_unit,
         quantity: quantity,
         value: value
       }
