@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
     if @recipe.public? || @recipe.user == current_user
       @foods = @recipe.foods
     else
-      flash[:alert] = "You are not authorized to access this recipe."
+      flash[:alert] = 'You are not authorized to access this recipe.'
       redirect_to root_path
     end
   end

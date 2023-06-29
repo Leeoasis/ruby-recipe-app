@@ -67,4 +67,3 @@ RSpec.describe 'Foods', type: :feature do
     end
   end
 end
- 

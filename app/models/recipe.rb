@@ -8,5 +8,4 @@ class Recipe < ApplicationRecord
   validates :cooking_time, presence: true, numericality: { greater_than: 0 }
   validates :description, presence: true
   validates :user_id, presence: true
-
 end

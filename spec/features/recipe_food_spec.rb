@@ -30,7 +30,7 @@ RSpec.describe 'RecipeFoods', type: :feature do
   scenario 'should have a button to add ingredient' do
     visit new_recipe_recipe_food_path(@recipe)
     expect(page).to have_button('Add Ingredient')
-  end  
+  end
   scenario 'should have a button to remove' do
     visit recipes_path
     expect(page).to have_content('Remove')
