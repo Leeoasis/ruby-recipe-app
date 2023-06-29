@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  position: relative;
+  font-size: 14px;
+  background-color: #f1f1f1;
+}
+
+/* ------------------------------ Styling the Nav Bar ------------------------- */
+nav {
+  background-color: #d3d3d3;
+  padding: 1% 2%;
+  width: 100%;
+}
+
+nav > ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10%;
+}
+
+li {
+  list-style: none;
+}
+
+.nav_link {
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ------------------------------ Styling the registration pages ------------------------- */
+.page-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.heading_container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 18%;
+}
+
+h1 {
+  color: #00f;
+}
+
+.app_description {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.registration_form_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #fff;
+  width: 60%;
+  padding: 3%;
+  border-radius: 8px;
+}
+
+.field {
+  margin-top: 14px;
+  width: 100%;
+}
+
+.input_field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  outline: none;
+  font-weight: 500;
+}
+
+.registration_button {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #00f;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+}
+
+.registration_button:hover {
+  font-size: 16px;
+  background-color: #0047ab;
+  cursor: pointer;
+}
+
+.shared_link {
+  align-self: center;
+  color: #00f;
+  font-weight: 500;
+}
+
+.shared_link:hover {
+  color: #0047ab;
+}
+
+.checkbox_field {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+/* ------------------------------ Styling the food list ------------------------- */
+.food_list_container {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  gap: 20px;
+  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+}
+
+.new_food_button {
+  align-self: flex-end;
+  background-color: #00f;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.food_list_table {
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+}
+
+.food_list_table > thead {
+  background-color: #d3d3d3;
+}
+
+th {
+  text-align: left;
+  padding: 20px 10px;
+}
+
+.food_list_table > tbody > tr > td {
+  padding: 10px;
+}
+
+.food_list_table > tbody > tr:nth-child(odd) {
+  background-color: #e4e2e2;
+}
+
+.food_list_table > tbody > tr:nth-child(even) {
+  background-color: #eeecec;
+}
+
+.delete_food_button {
+  padding: 4px 10px;
+  background-color: #ff3131;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+}
+
+.delete_food_button:hover {
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #fa5f55;
+}
+
+.food_form_heading {
+  color: #00f;
+  font-size: 26px;
+}
+
+.back_link {
+  padding: 0 18%;
+  color: #00f;
+  font-weight: 500;
+}
+
+.back_link:hover {
+  color: #0047ab;
+}

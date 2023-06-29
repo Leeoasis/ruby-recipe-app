@@ -1,3 +1,5 @@
+<div class="registration_container">
+<div class="registration_form_container">
 <%= form_with model: @food do |form| %>
   <% if @food.errors.any? %>
     <div id="error_explanation">
@@ -11,31 +13,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name %><br/>
+    <%= form.text_field :name, class:'input_field', placeholder: 'e.g John Doe' %>
   </div>
 
   <div class="field">
-    <%= form.label :measurement_unit %>
-    <%= form.text_field :measurement_unit %>
+    <%= form.label :measurement_unit %><br/>
+    <%= form.text_field :measurement_unit, class:'input_field', placeholder: 'e.g gramms' %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price, step: '0.01' %>
-  </div> 
-  
-   <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price, step: '0.01' %>
-  </div>
-
-    <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price, step: '0.01' %>
+    <%= form.label :price %><br/>
+    <%= form.number_field :price, step: '0.01', class:'input_field' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:'registration_button'%>
   </div>
 <% end %>
+</div>
+</div>
