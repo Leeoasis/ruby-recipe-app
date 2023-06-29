@@ -12,8 +12,7 @@
               <%= button_to "Remove", recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?' }, class:'delete_food_button' %>
             <% end %>
           </div>
-          <p class="recipe_text">Total Food Items: <%= recipe.description %></p>
-          <p class="recipe_text">Total Price <%= recipe.description %></p>
+          <%= render partial: 'shared/shopping_info', locals: { total_food_items: @total_food_items, total: @total } %>
         </div>
       <% end %>
     <% end %>

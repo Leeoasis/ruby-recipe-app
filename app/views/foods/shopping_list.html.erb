@@ -3,10 +3,7 @@
     <h2>Shopping List</h2>
   </div>
 
-  <div class="d-flex justify-content-between mb-5">
-    <h5>Amount of food items to buy: <%= @total_food_items %></h5>
-    <h5>Total value of food needed: <%= number_to_currency(@total) %></h5>
-  </div>
+<%= render partial: 'shared/shopping_info', locals: { total_food_items: @total_food_items, total: @total } %>
 
   <table class="table table-striped table-bordered">
     <thead class="table-light">
