@@ -360,3 +360,10 @@ th {
 .input_field_dropdown {
   padding: 20px;
 }
+
+.action-btns {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+}
