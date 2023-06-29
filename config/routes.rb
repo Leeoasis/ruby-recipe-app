@@ -19,9 +19,9 @@ Rails.application.routes.draw do
 
   resources :recipes, except: [:update] do
     patch :toggle, on: :member
-    resources :recipe_foods, only: [:new, :create, :destroy]
-  end  
-  
+    resources :recipe_foods, only: %i[new create destroy]
+  end
+
   get 'recipes/:id/shopping_list', to: 'foods#shopping_list', as: 'recipe_shopping_list'
 
   # Public recipe list routes
