@@ -17,15 +17,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :recipes, except: [:update] do
-    patch :toggle, on: :member
+  resources :recipes do
+    post :toggle, on: :member
     resources :recipe_foods, only: %i[new create destroy]
   end
 
   get 'recipes/:id/shopping_list', to: 'foods#shopping_list', as: 'recipe_shopping_list'
 
   # Public recipe list routes
-  get 'public_list', to: 'recipes#public_list', as: 'public_list_recipes'
+  resources :public_recipes, only: [:index]
 
   # Navigation menu routes
   root to: 'foods#index'

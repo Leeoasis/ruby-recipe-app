@@ -2,11 +2,7 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    if current_user.recipes.empty?
-      redirect_to new_recipe_path
-    else
-      @recipes = current_user.recipes.all
-    end
+    @recipes = current_user.recipes
   end
 
   def show
@@ -36,6 +32,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :preparation_time, :description, :public)
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
 end

@@ -199,3 +199,51 @@ th {
 .back_link:hover {
   color: #0047ab;
 }
+
+.recipe-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 2% 10%;
+}
+
+.recipe-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  width: 100%;
+  padding: 2%;
+}
+
+.recipe-card:hover {
+  background-color: #eeecec;
+}
+
+.name_action_container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-decoration: none;
+}
+
+.recipe-cards a {
+  text-decoration: none !important;
+  color: #000;
+}
+
+.add_new_recipe_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.add_new_recipe_link {
+  align-self: flex-end;
+  padding: 2% 10%;
+  font-weight: 500;
+  color: #00f;
+}
+
+.add_new_recipe_link:hover {
+  color: #0047ab;
+}
