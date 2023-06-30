@@ -80,3 +80,7 @@ group :test do
 end
 
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+gem 'rails-ujs', '~> 0.1.0'
+
+gem 'jquery-rails', '~> 4.6'
