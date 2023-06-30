@@ -31,6 +31,12 @@ class FoodsController < ApplicationController
     end
   end
 
+  def destroy
+    @food = current_user.foods.find(params[:id])
+    @food.destroy
+    redirect_to foods_path, notice: 'Food was successfully deleted.'
+  end
+
   def shopping_list
     @recipe = Recipe.find(params[:id])
     return unless @recipe
@@ -39,11 +45,13 @@ class FoodsController < ApplicationController
 
     @shopping_list = @recipe_foods.map do |recipe_food|
       food = recipe_food.food
+      measurement_unit = food.measurement_unit
       quantity = recipe_food.quantity
       value = quantity * food.price
 
       {
         food:,
+        measurement_unit:,
         quantity:,
         value:
       }
@@ -51,12 +59,6 @@ class FoodsController < ApplicationController
 
     @total_food_items = @shopping_list.length
     @total = @shopping_list.sum { |item| item[:value] }
-  end
-
-  def destroy
-    @food = current_user.foods.find(params[:id])
-    @food.destroy
-    redirect_to foods_path, notice: 'Food was successfully deleted.'
   end
 
   private

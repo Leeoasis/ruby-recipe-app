@@ -26,7 +26,7 @@ class RecipeFoodsController < ApplicationController
       redirect_to @recipe_food.recipe
     else
       flash[:error] = 'Error removing ingredient'
-      redirect_to root
+      redirect_to root_path
     end
   end
 
