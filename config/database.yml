@@ -1,0 +1,26 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: ruby_recipe_app_development
+  username: postgres
+  password: Takudzwa95!
+  host: localhost
+  port: 5432
+
+test:
+  <<: *default
+  database: ruby_recipe_app_test
+  username: postgres
+  password: Takudzwa95!
+  host: localhost
+  port: 5432
+
+production:
+  <<: *default
+  database: ruby_recipe_app_production
+  username: ruby_recipe_app
+  password: <%= ENV["RUBY_RECIPE_APP_DATABASE_PASSWORD"] %>

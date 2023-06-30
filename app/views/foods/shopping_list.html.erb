@@ -1,0 +1,29 @@
+<div class="shopping-list-container">
+    <h2 class="shopping-list-heading">Shopping List</h2>
+
+  <div class="shopping-values-container">
+    <h5 class="shopping-details">Amount of food items to buy: <span class="shop-number"><%= @total_food_items %></span></h5>
+    <h5 class="shopping-details">Total value of food needed: <span class="shop-number"><%= number_to_currency(@total) %></span></h5>
+  </div>
+
+  <table class="food_list_table">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @total_food_items > 0 %>
+        <% @shopping_list.each do |item| %>
+          <tr>
+            <td><%= item[:food].name %></td>
+            <td><%= item[:quantity] %> <%= item[:measurement_unit] %></td>
+            <td><%= number_to_currency(item[:value]) %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

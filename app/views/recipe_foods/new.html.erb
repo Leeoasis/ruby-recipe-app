@@ -1,0 +1,32 @@
+<div class="page-wrapper">
+  <div class="heading_container">
+    <h1> Add new Ingredient </h1>
+    <p class="app_description">Transform your dish from ordinary to extraordinary. Provide the essential ingredients for your recipe.</p>
+  </div>
+
+  <div class="registration_container">
+  <div class="registration_form_container">
+  <%= form_with(model: [@recipe, @recipe_food], method: :post, local: true, class: 'new_ingredient_form') do |form|  %>
+    <% if @recipe_food.errors.any? %>
+      <div>
+        <% @recipe_food.errors.full_messages.each do |message| %>
+          <div><%= message.inspect %></div>
+        <% end %>
+      </div>
+    <% end %>
+    <%= form.hidden_field :recipe_id, value: @recipe.id %>
+    <div class="dropdown-container">
+      <%= form.label :food_name %><br/>
+     <%= form.collection_select :food_id, @foods, :id, :name, {}, class: 'input_field' %>
+    </div>
+    <div>
+      <%= form.label :ingredient_quantity %>
+      <%= form.text_field :quantity, class:'input_field' %>
+    </div>
+    <div class="actions">
+      <%= form.submit 'Add Ingredient', class:'registration_button' %>
+    </div>
+  <% end %>
+</div>
+</div>
+</div>

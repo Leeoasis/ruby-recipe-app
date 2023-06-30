@@ -1,0 +1,27 @@
+<div class="food_list_container">
+<%= link_to 'Add New Food', new_food_path, class:'new_food_button' %>
+<table class="food_list_table">
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Measurement Unit</th>
+      <th>Unit Price</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.measurement_unit %></td>
+        <td><%= food.price %></td>
+        <td>
+          <% if can? :destroy, food %>
+            <%= button_to "Delete", food_path(food), method: :delete, data: { confirm: 'Are you sure you want to delete this food?' }, class:'delete_food_button' %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

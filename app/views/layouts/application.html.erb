@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RubyRecipeApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li><%= link_to 'Home', root_path, class: 'nav_link' %></li>
+        <li><%= link_to 'Recipes', recipes_path, class: 'nav_link' %></li>
+        <li><%= link_to 'Public Recipes', public_list_recipes_path, class: 'nav_link' %></li>
+     </ul>
+    </nav>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>
