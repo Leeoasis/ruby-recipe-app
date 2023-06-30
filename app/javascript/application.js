@@ -3,3 +3,4 @@ import '@hotwired/turbo-rails';
 import 'controllers';
 import 'jquery.min.js';
 import 'rails-ujs.js';
+

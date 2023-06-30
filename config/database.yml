@@ -7,7 +7,7 @@ development:
   <<: *default
   database: ruby_recipe_app_development
   username: postgres
-  password: Takudzwa95!
+  password: jgrsfhhggff
   host: localhost
   port: 5432
 
@@ -15,7 +15,7 @@ test:
   <<: *default
   database: ruby_recipe_app_test
   username: postgres
-  password: Takudzwa95!
+  password: jgrsfhhggff
   host: localhost
   port: 5432
 
