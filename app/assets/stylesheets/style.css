@@ -374,3 +374,8 @@ th {
   align-items: center;
   gap: 30px;
 }
+
+.public-recipe-heading {
+  text-align: center;
+  padding-top: 10px;
+}
