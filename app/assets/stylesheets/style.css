@@ -37,6 +37,14 @@ li {
 }
 
 /* ------------------------------ Styling the registration pages ------------------------- */
+.notice,
+.alert {
+  text-align: center;
+  color: #fa5f55;
+  font-weight: 500;
+  font-weight: 14px;
+}
+
 .page-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
