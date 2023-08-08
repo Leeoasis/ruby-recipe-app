@@ -37,6 +37,14 @@ li {
 }
 
 /* ------------------------------ Styling the registration pages ------------------------- */
+.notice,
+.alert {
+  text-align: center;
+  color: #fa5f55;
+  font-weight: 500;
+  font-size: 14px;
+}
+
 .page-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -365,4 +373,9 @@ th {
   justify-content: flex-start;
   align-items: center;
   gap: 30px;
+}
+
+.public-recipe-heading {
+  text-align: center;
+  padding-top: 10px;
 }
